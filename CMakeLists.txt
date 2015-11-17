@@ -18,3 +18,12 @@ add_library(TestCalorimeterCalibration SHARED
   test_calorimeter_s2c_module.h
   test_calorimeter_s2c_module.cc
   )
+
+# Install libraries
+install(FILES
+  ${PROJECT_BINARY_DIR}/libTestCalorimeterCalibration${CMAKE_SHARED_LIBRARY_SUFFIX}
+  DESTINATION ${CMAKE_INSTALL_PREFIX}/lib
+  PERMISSIONS OWNER_READ OWNER_EXECUTE
+  GROUP_READ GROUP_EXECUTE
+  WORLD_READ WORLD_EXECUTE
+  )
