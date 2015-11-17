@@ -552,7 +552,7 @@ namespace snemo {
     void test_calorimeter_s2c_module::_parse_database_file(const std::string & db_path_)
     {
       // Parsing the database file
-      std::ifstream db(db_path_);
+      std::ifstream db(db_path_.c_str());
       std::string line;
       std::getline(db, line);
       DT_LOG_DEBUG(get_logging_priority(), "First line = " << line);
