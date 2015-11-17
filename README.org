@@ -1,0 +1,43 @@
+#+TITLE:  =TestCalorimeterCalibration= module
+#+AUTHOR: Xavier Garrido & Arnaud Huber
+#+DATE:   17/11/2015
+
+This repository holds a SN@ilWare module to test a calorimeter calibration based
+upon a /database/ file.
+
+* Installation
+
+First, you need to clone the repository into a local directory by doing
+#+BEGIN_SRC shell
+  git clone https://github.com/xgarrido/TestCalorimeterCalibration.git
+#+END_SRC
+This implies to have =git= binary installed on your computer[fn:9d942c13]
+
+Then, =cd= into you =TestCalorimeterCalibration= directory and create a =build=
+directory
+#+BEGIN_SRC shell
+  mkdir -p build; cd build
+#+END_SRC
+
+Then, configure your installation by using =cmake= command /i.e./
+#+BEGIN_SRC shell
+  cmake \
+      -DCMAKE_PREFIX_PATH=<falaise installation dir.> \
+      -DCMAKE_INSTALL_PREFIX=../install ..
+#+END_SRC
+This will check for =Falaise= installation directory and install
+=TestCalorimeterCalibration= library into a dedicated directory =../install=.
+
+Given the =cmake= configuration has worked without errors, you finally have to do
+#+BEGIN_SRC shell
+  make install
+#+END_SRC
+
+* Resources files
+
+See. =resources= directory within this repository.
+
+* Footnotes
+
+[fn:9d942c13] on debian flavour machine, you can install it through =sudo
+apt-get install git=
